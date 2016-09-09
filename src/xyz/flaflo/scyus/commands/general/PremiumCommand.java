@@ -7,6 +7,11 @@ import xyz.flaflo.scyus.Scyus;
 import xyz.flaflo.scyus.commands.ICommand;
 import xyz.flaflo.scyus.user.ScyusUser;
 
+/**
+ * A Command to check premium status
+ * @author Flaflo
+ *
+ */
 public final class PremiumCommand implements ICommand {
 
 	@Override
