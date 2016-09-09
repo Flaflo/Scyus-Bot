@@ -1,0 +1,4 @@
+- settings loading and saving!!!
+- implement C99 API, settings must be done first!
+
+IDEAS: ?
