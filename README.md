@@ -1,7 +1,9 @@
 # Scyus-Bot
 A Skype Bot done in Java
 
-Libraries used:
-https://github.com/taksan/skype-java-api/ + dependencies
-https://github.com/brianm/config-magic/ + dependencies
+# Dependencies
+https://github.com/taksan/skype-java-api/
+
+https://github.com/brianm/config-magic/
+
 http://dev.mysql.com/downloads/connector/j/
