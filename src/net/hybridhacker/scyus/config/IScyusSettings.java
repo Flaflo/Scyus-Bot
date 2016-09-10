@@ -1,4 +1,4 @@
-package xyz.flaflo.scyus.config;
+package net.hybridhacker.scyus.config;
 
 import org.skife.config.Config;
 import org.skife.config.Default;

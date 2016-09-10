@@ -1,12 +1,12 @@
-package xyz.flaflo.scyus.commands.general;
+package net.hybridhacker.scyus.commands.general;
 
 import java.util.Arrays;
 
 import com.skype.Chat;
 import com.skype.User;
 
-import xyz.flaflo.scyus.Scyus;
-import xyz.flaflo.scyus.commands.ICommand;
+import net.hybridhacker.scyus.Scyus;
+import net.hybridhacker.scyus.commands.ICommand;
 
 /**
  * Prints a list of available commands and their description

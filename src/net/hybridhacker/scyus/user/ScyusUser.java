@@ -1,4 +1,4 @@
-package xyz.flaflo.scyus.user;
+package net.hybridhacker.scyus.user;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.HashMap;
 
-import xyz.flaflo.scyus.Scyus;
-import xyz.flaflo.scyus.commands.ICommand;
+import net.hybridhacker.scyus.Scyus;
+import net.hybridhacker.scyus.commands.ICommand;
 
 /**
  * Represents a Scyus Bot User

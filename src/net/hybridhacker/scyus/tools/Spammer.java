@@ -1,9 +1,9 @@
-package xyz.flaflo.scyus.tools;
+package net.hybridhacker.scyus.tools;
 
 import com.skype.SkypeException;
 import com.skype.User;
 
-import xyz.flaflo.scyus.Scyus;
+import net.hybridhacker.scyus.Scyus;
 
 /**
  * Represents a spam attack on a skype user

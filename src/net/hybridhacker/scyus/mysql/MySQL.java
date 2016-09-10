@@ -1,4 +1,4 @@
-package xyz.flaflo.scyus.mysql;
+package net.hybridhacker.scyus.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

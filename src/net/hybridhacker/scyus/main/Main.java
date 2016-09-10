@@ -1,6 +1,6 @@
-package xyz.flaflo.scyus.main;
+package net.hybridhacker.scyus.main;
 
-import xyz.flaflo.scyus.Scyus;
+import net.hybridhacker.scyus.Scyus;
 
 /**
  * The Programs Main

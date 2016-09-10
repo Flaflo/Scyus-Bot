@@ -1,11 +1,11 @@
-package xyz.flaflo.scyus.automation;
+package net.hybridhacker.scyus.automation;
 
 import com.skype.Friend;
 import com.skype.Skype;
 import com.skype.SkypeException;
 import com.skype.User;
 
-import xyz.flaflo.scyus.Scyus;
+import net.hybridhacker.scyus.Scyus;
 
 /**
  * Accepts automatically Friend requests

@@ -1,4 +1,4 @@
-package xyz.flaflo.scyus.commands;
+package net.hybridhacker.scyus.commands;
 
 import java.util.Arrays;
 

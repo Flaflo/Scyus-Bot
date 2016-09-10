@@ -1,11 +1,11 @@
-package xyz.flaflo.scyus.commands.general;
+package net.hybridhacker.scyus.commands.general;
 
 import com.skype.Chat;
 import com.skype.User;
 
-import xyz.flaflo.scyus.Scyus;
-import xyz.flaflo.scyus.commands.ICommand;
-import xyz.flaflo.scyus.user.ScyusUser;
+import net.hybridhacker.scyus.Scyus;
+import net.hybridhacker.scyus.commands.ICommand;
+import net.hybridhacker.scyus.user.ScyusUser;
 
 /**
  * A Command to check premium status

@@ -1,4 +1,4 @@
-package xyz.flaflo.scyus.tools;
+package net.hybridhacker.scyus.tools;
 
 import com.skype.Friend;
 import com.skype.Skype;
@@ -6,7 +6,7 @@ import com.skype.SkypeException;
 import com.skype.User;
 import com.skype.User.BuddyStatus;
 
-import xyz.flaflo.scyus.Scyus;
+import net.hybridhacker.scyus.Scyus;
 
 /**
  * Represents a Skype text broadcast

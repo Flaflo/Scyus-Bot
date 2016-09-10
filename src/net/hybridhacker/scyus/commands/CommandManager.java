@@ -1,4 +1,4 @@
-package xyz.flaflo.scyus.commands;
+package net.hybridhacker.scyus.commands;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,10 +9,10 @@ import com.skype.ChatMessageAdapter;
 import com.skype.SkypeException;
 import com.skype.User;
 
-import xyz.flaflo.scyus.Scyus;
-import xyz.flaflo.scyus.commands.general.HelpCommand;
-import xyz.flaflo.scyus.commands.general.PremiumCommand;
-import xyz.flaflo.scyus.commands.spam.TextSpamCommand;
+import net.hybridhacker.scyus.Scyus;
+import net.hybridhacker.scyus.commands.general.HelpCommand;
+import net.hybridhacker.scyus.commands.general.PremiumCommand;
+import net.hybridhacker.scyus.commands.spam.TextSpamCommand;
 
 /**
  * Class that manages incomming messages and commands

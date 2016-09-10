@@ -1,4 +1,4 @@
-package xyz.flaflo.scyus;
+package net.hybridhacker.scyus;
 
 import java.util.Properties;
 import java.util.logging.ConsoleHandler;
@@ -13,11 +13,11 @@ import com.skype.Skype;
 import com.skype.SkypeException;
 import com.skype.User;
 
-import xyz.flaflo.scyus.automation.AutoAccepter;
-import xyz.flaflo.scyus.commands.CommandManager;
-import xyz.flaflo.scyus.config.IScyusSettings;
-import xyz.flaflo.scyus.mysql.MySQL;
-import xyz.flaflo.scyus.user.ScyusUserManager;
+import net.hybridhacker.scyus.automation.AutoAccepter;
+import net.hybridhacker.scyus.commands.CommandManager;
+import net.hybridhacker.scyus.config.IScyusSettings;
+import net.hybridhacker.scyus.mysql.MySQL;
+import net.hybridhacker.scyus.user.ScyusUserManager;
 
 /**
  * Scyus Bot class

@@ -1,12 +1,12 @@
-package xyz.flaflo.scyus.commands.spam;
+package net.hybridhacker.scyus.commands.spam;
 
 import com.skype.Chat;
 import com.skype.User;
 
-import xyz.flaflo.scyus.Scyus;
-import xyz.flaflo.scyus.commands.ICommand;
-import xyz.flaflo.scyus.tools.Spammer;
-import xyz.flaflo.scyus.user.ScyusUser;
+import net.hybridhacker.scyus.Scyus;
+import net.hybridhacker.scyus.commands.ICommand;
+import net.hybridhacker.scyus.tools.Spammer;
+import net.hybridhacker.scyus.user.ScyusUser;
 
 /**
  * Spams an user with a specified amount of text

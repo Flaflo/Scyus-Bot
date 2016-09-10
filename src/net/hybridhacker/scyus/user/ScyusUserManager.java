@@ -1,4 +1,4 @@
-package xyz.flaflo.scyus.user;
+package net.hybridhacker.scyus.user;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.HashMap;
 
-import xyz.flaflo.scyus.Scyus;
+import net.hybridhacker.scyus.Scyus;
 
 /**
  * Manages Scyus Users
