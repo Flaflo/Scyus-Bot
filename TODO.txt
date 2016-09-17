@@ -1,4 +1,4 @@
-- settings loading and saving!!!
-- implement C99 API, settings must be done first!
+- implement C99 API
 
-IDEAS: ?
+IDEAS:
+Add all C99 Features
