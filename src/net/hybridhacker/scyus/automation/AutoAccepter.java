@@ -33,6 +33,14 @@ public final class AutoAccepter extends Thread {
 
 	private volatile boolean running;
 
+	/**
+	 * Constructs the Autoaccepter 
+	 */
+	public AutoAccepter() {
+		this.setName("Auto Accept Thread");
+		this.setDaemon(true);
+	}
+	
 	@Override
 	public synchronized void start() {
 		super.start();
