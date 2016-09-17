@@ -16,6 +16,9 @@
 
 package net.hybridhacker.scyus.config;
 
+import java.io.File;
+import java.util.Properties;
+
 import org.skife.config.Config;
 import org.skife.config.Default;
 
@@ -27,6 +30,15 @@ import org.skife.config.Default;
  */
 public interface IScyusSettings {
 
+	/**
+	 * The file the config will be stored in
+	 */
+	public static final File CONFIG_FILE = new File(System.getProperty("user.dir") + "/scyus.cfg");
+	/**
+	 * The properties the settings will be stored in
+	 */
+	public static final Properties CONFIG_PROPERTIES = new Properties();
+	
 	/**
 	 * @return the message format
 	 */
@@ -86,7 +98,7 @@ public interface IScyusSettings {
 	/**
 	 * @return the password
 	 */
-	@Default("6]:ZAcrg5#:$@Nd")
+	@Default("root")
 	@Config("mysql.password")
 	public String getMySqlPassword();
 	
