@@ -55,7 +55,7 @@ public final class Broadcaster extends Thread {
 					final User user = User.getInstance(friend.getId());
 
 					user.send(message);
-					Scyus.getInstance().sendMessage(user, "Broadcast by " + creator.getFullName());
+					Scyus.getInstance().sendMessage(user, "Broadcast by \"" + creator.getId() + "\"");
 				}
 			}
 		} catch (SkypeException e) {
