@@ -146,14 +146,8 @@ public final class C99 {
 		return new String(downloadContent(String.format(GEO_IP, apiKey, host)));
 	}
 	
-	public BufferedImage screenshotTool(final String username) {
-		try {
-			return ImageIO.read(new ByteArrayInputStream(downloadContent(String.format(SCREENSHOT_TOOL, apiKey, username))));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		return null;
+	public BufferedImage screenshotTool(final String username) throws IOException {
+		return ImageIO.read(new ByteArrayInputStream(downloadContent(String.format(SCREENSHOT_TOOL, apiKey, username))));
 	}
 	
 	public String domainChecker(final String domain) {
