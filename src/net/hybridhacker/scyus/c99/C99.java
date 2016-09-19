@@ -98,8 +98,8 @@ public final class C99 {
 		return new String(downloadContent(String.format(RANDOM_INFO_GENERATOR, apiKey, gender.name().toLowerCase())));
 	}
 	
-	public String translator(final Language language) {
-		return new String(downloadContent(String.format(TRANSLATOR, apiKey, language.name().toLowerCase())));
+	public String translator(final String text, final Language language) {
+		return new String(downloadContent(String.format(TRANSLATOR, apiKey, text, language.name().toLowerCase())));
 	}
 	
 	public boolean ipValidator(final String ip) {
