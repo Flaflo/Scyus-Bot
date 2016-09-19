@@ -93,7 +93,7 @@ public final class ScyusUser {
 
 			userResultSet.close();
 		} else {
-			Scyus.getInstance().getLogger().info("Could not find user \"" + id + "\" creating one.");
+			Scyus.getInstance().getLogger().info("Could not find user \"" + id + "\", creating one.");
 			uploadUserInfo();
 		}
 		
