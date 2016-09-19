@@ -49,18 +49,27 @@ public final class Broadcaster extends Thread {
 	}
 
 	public void run() {
+		Scyus.getInstance().getLogger().info("[" + creator.getId() + "] Starting Broadcast.");
+
 		try {
 			for (final Friend friend : Skype.getContactList().getAllFriends()) {
-				if (friend.getBuddyStatus().equals(BuddyStatus.ADDED)) {
-					final User user = User.getInstance(friend.getId());
-
-					user.send(message);
-					Scyus.getInstance().sendMessage(user, "Broadcast by \"" + creator.getId() + "\"");
+				try {
+					if (friend.getBuddyStatus().equals(BuddyStatus.ADDED)) {
+						final User user = User.getInstance(friend.getId());
+	
+						user.send(message);
+						Scyus.getInstance().sendMessage(user, "Broadcast by \"" + creator.getId() + "\"");
+					}
+				} catch (SkypeException e) {
+					e.printStackTrace();
 				}
 			}
 		} catch (SkypeException e) {
 			e.printStackTrace();
+		} finally {
+			Scyus.getInstance().getLogger().info("[" + creator.getId() + "] Broadcast finished.");
 		}
+
 	}
 
 	/**
