@@ -112,7 +112,7 @@ public interface IScyusSettings {
 	/**
 	 * @return the api key
 	 */
-	@Default("")
+	@Default("key")
 	@Config("c99.key")
 	public String getApiC99Key(); 
 }
