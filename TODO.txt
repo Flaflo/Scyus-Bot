@@ -1,4 +1,8 @@
 - implement C99 API
+- Add all C99 Features
+
+- implement language.yml
 
 IDEAS:
-Add all C99 Features
+- Broadcast messages as premium
+- (Un)subscribe to broadcasts
