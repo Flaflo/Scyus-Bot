@@ -26,32 +26,51 @@ import javax.imageio.ImageIO;
 
 /**
  * A Class used to implement api.c99.nl
+ * 
  * @author Flaflo
  *
  */
 public final class C99 {
-	
+
 	/**
 	 * The gender used in the random info generator
+	 * 
 	 * @author Flaflo
 	 *
 	 */
 	public enum Gender {
-		MALE, 
-		FEMALE, 
+		/**
+		 * The male gender
+		 */
+		MALE,
+		/**
+		 * The female gender
+		 */
+		FEMALE,
+		/**
+		 * All possible genders
+		 */
 		ALL
 	}
-	
+
 	/**
 	 * The language for the translator
+	 * 
 	 * @author Flaflo
 	 *
 	 */
 	public enum Language {
+		/**
+		 * The English language
+		 */
 		EN,
+		/**
+		 * The German language
+		 */
 		DE;
 	}
-	
+
+	// API-URL Constants
 	private static final String SKYPE_RESOLVER = "http://api.c99.nl/skyperesolver.php?key=%s&username=%s";
 	private static final String RESOLVE_DATABASE = "http://api.c99.nl/resolvedb.php?key=%s&username=%s";
 	private static final String IP_2_SKYPE = "http://api.c99.nl/ip2skype.php?key=%s&ip=%s";
@@ -80,100 +99,221 @@ public final class C99 {
 
 	/**
 	 * Constructs the C99 Api
-	 * @param apiKey the apiKey
+	 * 
+	 * @param apiKey
+	 *            the apiKey
 	 */
 	public C99(final String apiKey) {
 		this.apiKey = apiKey;
 	}
-	
+
+	/**
+	 * @param address
+	 *            the address to check
+	 * @return the current balance of the address
+	 */
 	public String btcBalanceChecker(final String address) {
 		return new String(downloadContent(String.format(BTC_BALANCE_CHECKER, apiKey, address)));
 	}
-	
+
+	/**
+	 * @param videoId
+	 *            the YouTube video id
+	 * @return the video details
+	 */
 	public String youtubeVideoDetails(final String videoId) {
 		return new String(downloadContent(String.format(YOUTUBE_VIDEO_DETAILS, apiKey, videoId)));
 	}
-	
+
+	/**
+	 * @param gender
+	 *            the gender to generate for
+	 * @return the generated info
+	 */
 	public String randomInfoGenerator(final Gender gender) {
 		return new String(downloadContent(String.format(RANDOM_INFO_GENERATOR, apiKey, gender.name().toLowerCase())));
 	}
-	
+
+	/**
+	 * @param text
+	 *            the text to translate from
+	 * @param language
+	 *            the language to translate to
+	 * @return the translated text
+	 */
 	public String translator(final String text, final Language language) {
 		return new String(downloadContent(String.format(TRANSLATOR, apiKey, text, language.name().toLowerCase())));
 	}
-	
+
+	/**
+	 * @param ip
+	 *            the IP to check
+	 * @return true if the IP is valid
+	 */
 	public boolean ipValidator(final String ip) {
-		return new String(downloadContent(String.format(IP_VALIDATOR, apiKey, ip))).equalsIgnoreCase("true"); //TODO: IDK if it is true or valid
+		return new String(downloadContent(String.format(IP_VALIDATOR, apiKey, ip))).equalsIgnoreCase("true"); // TODO
 	}
-	
+
+	/**
+	 * @param email
+	 *            the email to check
+	 * @return true if the email is valid
+	 */
 	public boolean emailValidator(final String email) {
-		return new String(downloadContent(String.format(EMAIL_VALIDATOR, apiKey, email))).equalsIgnoreCase("true"); //TODO: IDK if it is true or valid
+		return new String(downloadContent(String.format(EMAIL_VALIDATOR, apiKey, email))).equalsIgnoreCase("true"); // TODO
 	}
-	
+
+	/**
+	 * @param word
+	 *            the word to search
+	 * @return the dictionary to the given word
+	 */
 	public String dictionary(final String word) {
 		return new String(downloadContent(String.format(DICTIONARY, apiKey, word)));
 	}
-	
+
+	/**
+	 * @param textFile
+	 *            the URL to the file
+	 * @return a random string from the given textFile
+	 */
 	public String randomStringPicker(final String textFile) {
 		return new String(downloadContent(String.format(RANDOM_STRING_PICKER, apiKey, textFile)));
 	}
-	
+
+	/**
+	 * @param url
+	 *            the URL to shorten
+	 * @return the shortened URL
+	 */
 	public String urlShortener(final String url) {
 		return new String(downloadContent(String.format(URL_SHORTENER, apiKey, url)));
 	}
-	
+
+	/**
+	 * @param content
+	 *            the content to paste
+	 * @return the URL to the paste
+	 */
 	public String htmlPaste(final String content) {
 		return new String(downloadContent(String.format(HTML_PASTE, apiKey, content)));
 	}
-	
+
+	/**
+	 * @param content
+	 *            the content to paste
+	 * @return the URL to the paste
+	 */
 	public String textPaste(final String content) {
 		return new String(downloadContent(String.format(TEXT_PASTE, apiKey, content)));
 	}
-	
+
+	/**
+	 * @param url
+	 *            the URL to backup
+	 * @return the URL to the backup
+	 */
 	public String linkBackup(final String url) {
 		return new String(downloadContent(String.format(LINK_BACKUP, apiKey, url)));
 	}
-	
+
+	/**
+	 * @param host
+	 *            the host to get from
+	 * @return the headers from the host
+	 */
 	public String getWebisteHeaders(final String host) {
 		return new String(downloadContent(String.format(GET_WEBSITE_HEADERS, apiKey, host)));
 	}
-	
-	public String websiteUpOrDown(final String host) {
-		return new String(downloadContent(String.format(WEBSITE_UP_OR_DOWN, apiKey, host)));
+
+	/**
+	 * @param host
+	 *            the host to check
+	 * @return true if the website is available
+	 */
+	public boolean websiteUpOrDown(final String host) {
+		return new String(downloadContent(String.format(WEBSITE_UP_OR_DOWN, apiKey, host))).equalsIgnoreCase("true");
 	}
-	
+
+	/**
+	 * @param host
+	 *            the host to GEO IP
+	 * @return the GEO location of the IP
+	 */
 	public String geoIp(final String host) {
 		return new String(downloadContent(String.format(GEO_IP, apiKey, host)));
 	}
-	
-	public BufferedImage screenshotTool(final String username) throws IOException {
-		return ImageIO.read(new ByteArrayInputStream(downloadContent(String.format(SCREENSHOT_TOOL, apiKey, username))));
+
+	/**
+	 * @param url
+	 *            the URL to screenshot
+	 * @return the taken screenshot from the URL
+	 * @throws IOException
+	 */
+	public BufferedImage screenshotTool(final String url) throws IOException {
+		return ImageIO.read(new ByteArrayInputStream(downloadContent(String.format(SCREENSHOT_TOOL, apiKey, url))));
 	}
-	
-	public String domainChecker(final String domain) {
-		return new String(downloadContent(String.format(DOMAIN_CHECKER, apiKey, domain)));
+
+	/**
+	 * @param domain
+	 *            the domain to check
+	 * @return true if the domain is available
+	 */
+	public boolean domainChecker(final String domain) {
+		return new String(downloadContent(String.format(DOMAIN_CHECKER, apiKey, domain))).equalsIgnoreCase("true"); // TODO
 	}
-	
+
+	/**
+	 * @param host
+	 *            the host to resolve
+	 * @return the resolved IP
+	 */
 	public String hostToIp(final String host) {
 		return new String(downloadContent(String.format(HOST_TO_IP, apiKey, host)));
 	}
-	
+
+	/**
+	 * 
+	 * @param ip
+	 *            the IP to resolve
+	 * @return the resolved host
+	 */
 	public String ipToHost(final String ip) {
 		return new String(downloadContent(String.format(IP_TO_HOST, apiKey, ip)));
 	}
-	
+
+	/**
+	 * @param username
+	 *            the username to resolve
+	 * @return the resolved IP from database
+	 */
 	public String resolveDatabase(final String username) {
 		return new String(downloadContent(String.format(RESOLVE_DATABASE, apiKey, username)));
 	}
-	
-	public String ip2Skype(final String username) {
-		return new String(downloadContent(String.format(IP_2_SKYPE, apiKey, username)));
+
+	/**
+	 * @param ip
+	 *            the IP to resolve
+	 * @return the resolved IP
+	 */
+	public String ip2Skype(final String ip) {
+		return new String(downloadContent(String.format(IP_2_SKYPE, apiKey, ip)));
 	}
-	
+
+	/**
+	 * @param host
+	 *            the host to ping
+	 * @return the ping-string
+	 */
 	public String ping(final String host) {
 		return new String(downloadContent(String.format(PING, apiKey, host)));
 	}
-	
+
+	/**
+	 * @param username
+	 *            the username to resolve
+	 * @return the resolved IP
+	 */
 	public String skypeResolver(final String username) {
 		return new String(downloadContent(String.format(SKYPE_RESOLVER, apiKey, username)));
 	}
@@ -186,15 +326,18 @@ public final class C99 {
 	}
 
 	/**
-	 * @param apiKey the apiKey to set
+	 * @param apiKey
+	 *            the apiKey to set
 	 */
 	public void setApiKey(String apiKey) {
 		this.apiKey = apiKey;
 	}
-	
+
 	/**
 	 * Downloads content from a website
-	 * @param url the url to download from
+	 * 
+	 * @param url
+	 *            the url to download from
 	 * @return the downloaded content
 	 */
 	private static byte[] downloadContent(final String url) {
@@ -202,12 +345,12 @@ public final class C99 {
 			final DataInputStream dataIn = new DataInputStream(new URL(url).openStream());
 			final byte[] content = new byte[dataIn.available()];
 			dataIn.readFully(content);
-			
+
 			return content;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		return null;
 	}
 }
