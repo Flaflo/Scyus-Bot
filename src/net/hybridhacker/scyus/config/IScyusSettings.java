@@ -23,7 +23,7 @@ import org.skife.config.Config;
 import org.skife.config.Default;
 
 /**
- * Setttings for Scyus
+ * Settings for Scyus
  * 
  * @author Flaflo
  *
