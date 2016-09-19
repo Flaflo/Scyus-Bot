@@ -108,5 +108,11 @@ public interface IScyusSettings {
 	@Default("scyus")
 	@Config("mysql.databse")
 	public String getMySqlDatabse();
-	
+
+	/**
+	 * @return the api key
+	 */
+	@Default("")
+	@Config("c99.key")
+	public String getApiC99Key(); 
 }

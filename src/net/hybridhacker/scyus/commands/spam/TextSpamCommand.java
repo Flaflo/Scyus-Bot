@@ -45,11 +45,12 @@ public final class TextSpamCommand implements ICommand {
 				else {
 					final Spammer spammer = new Spammer(sender, user, ICommand.implodeArgs(args, 1, args.length),
 							Scyus.getInstance().getSettings().getMaxTextSpamAmount());
-	
+
 					if ((!suser.hasCooldown(this) && !suser.isPremium()) || suser.isPremium()) {
 						spammer.start();
-						Scyus.getInstance().sendMessage(chat, "Spamming \"" + args[0] + "\" " + Scyus.getInstance().getSettings().getMaxTextSpamAmount() + " times!");
-						
+						Scyus.getInstance().sendMessage(chat, "Spamming \"" + args[0] + "\" "
+								+ Scyus.getInstance().getSettings().getMaxTextSpamAmount() + " times!");
+
 						suser.addCooldown(this, Scyus.getInstance().getSettings().getTextSpamCooldown());
 					} else if (!suser.isPremium())
 						Scyus.getInstance().sendMessage(chat,
