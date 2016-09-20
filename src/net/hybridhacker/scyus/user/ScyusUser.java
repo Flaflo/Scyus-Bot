@@ -20,6 +20,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.HashMap;
 
 import net.hybridhacker.scyus.Scyus;
@@ -109,7 +110,7 @@ public final class ScyusUser {
 		final PreparedStatement userStatement = Scyus.getInstance().getMySql().getConnection()
 				.prepareStatement("INSERT INTO users (id, premiumEnd) VALUES ('" + id + "', ?)");
 
-		userStatement.setTimestamp(1, new Timestamp(System.currentTimeMillis() - 1000)); //TODO fix workaround
+		userStatement.setTimestamp(1, Timestamp.from(Instant.EPOCH));
 
 		userStatement.executeUpdate();
 	}
