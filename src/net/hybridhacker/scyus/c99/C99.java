@@ -329,7 +329,7 @@ public final class C99 {
 	 * @param apiKey
 	 *            the apiKey to set
 	 */
-	public void setApiKey(String apiKey) {
+	public void setApiKey(final String apiKey) {
 		this.apiKey = apiKey;
 	}
 
