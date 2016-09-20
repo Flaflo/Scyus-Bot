@@ -16,6 +16,8 @@
 
 package net.hybridhacker.scyus.commands.general;
 
+import java.util.Date;
+
 import com.skype.Chat;
 import com.skype.User;
 
@@ -25,6 +27,7 @@ import net.hybridhacker.scyus.user.ScyusUser;
 
 /**
  * A Command to check premium status
+ * 
  * @author Flaflo
  *
  */
@@ -33,8 +36,11 @@ public final class PremiumCommand implements ICommand {
 	@Override
 	public void onCommand(String alias, String[] args, User sender, Chat chat) {
 		final ScyusUser suser = Scyus.getInstance().getUserManager().getUser(sender.getId());
-		
-		Scyus.getInstance().sendMessage(chat, "You are" + (suser.isPremium() ? " " : " not ") + "premium.");
+
+		if (suser.isPremium())
+			Scyus.getInstance().sendMessage(chat, "Your Premium expires at " + new Date(suser.getPremiumEnd()));
+		else
+			Scyus.getInstance().sendMessage(chat, "You're not Premium.");
 	}
 
 	@Override
