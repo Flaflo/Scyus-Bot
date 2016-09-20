@@ -72,6 +72,19 @@ public final class ScyusUser {
 		this.id = id;
 		this.premiumEnd = premiumEnd;
 	}
+	
+	/**
+	 * Check if informations need to be refreshed
+	 * and if true it re-downloads the user informations
+	 */
+	private void checkRefreshInfos() {
+		if (System.currentTimeMillis() - lastInfoCheck >= 10000)
+			try {
+				this.downloadUserInfo();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
 
 	/**
 	 * Downloads User info from mysql
@@ -169,12 +182,7 @@ public final class ScyusUser {
 	 * @return the premium
 	 */
 	public boolean isPremium() {
-		if (System.currentTimeMillis() - lastInfoCheck >= 10000)
-			try {
-				this.downloadUserInfo();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+		checkRefreshInfos();
 		
 		return System.currentTimeMillis() < premiumEnd;
 	}
@@ -183,12 +191,7 @@ public final class ScyusUser {
 	 * @return the premiumEnd
 	 */
 	public long getPremiumEnd() {
-		if (System.currentTimeMillis() - lastInfoCheck >= 10000)
-			try {
-				this.downloadUserInfo();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+		checkRefreshInfos();
 		
 		return premiumEnd;
 	}
